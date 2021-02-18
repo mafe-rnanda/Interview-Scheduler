@@ -67,7 +67,7 @@ export default function Application(props) {
     axios.get('/api/days')
     .then(res => {
       setDays(res.data);
-      console.log("RESDATA: ", res.data)
+      // console.log("RESDATA: ", res.data)
     })
   }, []);
 
