@@ -15,6 +15,7 @@ const CREATE = "CREATE";
 const SAVING = "SAVING";
 const DELETING = "DELETING";
 const CONFIRM = "CONFIRM";
+const EDIT = "EDIT";
 
 export default function Appointment(props) {
   
@@ -31,7 +32,8 @@ export default function Appointment(props) {
     transition(SAVING)
     props.bookInterview(props.id, interview)
       .then(() => transition(SHOW))
-   
+      .catch((err) => err)
+
     console.log("NewInterview :", interview);
     
   };
@@ -40,6 +42,7 @@ export default function Appointment(props) {
     transition(DELETING)
     props.cancelInterview(props.id)
       .then(() => transition(EMPTY))
+      .catch((err) => err)
   }
   
   return (
@@ -49,9 +52,7 @@ export default function Appointment(props) {
       {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
       {mode === CREATE && (
         <Form
-        name={""}
         interviewers={props.interviewers}
-        interviewer={{}}
         onSave={save}
         onCancel={back}
         />
@@ -60,7 +61,7 @@ export default function Appointment(props) {
         <Show
           student={props.interview.student}
           interviewer={props.interview.interviewer}
-          onEdit={() => console.log("onEdit")}
+          onEdit={() => transition(EDIT)}
           onDelete={() => transition(CONFIRM)}
         />
       )}
@@ -71,6 +72,15 @@ export default function Appointment(props) {
           message="Are you sure you would like to delete?"
           onCancel={back}
           onConfirm={remove}
+        />
+      )}
+      {mode === EDIT && (
+        <Form
+          name={props.interview.student}
+          interviewer={props.interview.interviewer.id}
+          interviewers={props.interviewers}
+          onSave={save}
+          onCancel={() => back(SHOW)}
         />
       )}
     </article>
