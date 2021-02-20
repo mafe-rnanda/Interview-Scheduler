@@ -30,8 +30,6 @@ export default function Application() {
       .then(() => {
         setState({...state, appointments})
       })
-      .catch(err => err)
-
   };
 
   const cancelInterview = (id) => {
@@ -50,7 +48,6 @@ export default function Application() {
       .then(() => {
         setState({...state, appointments})
       })
-      .catch(err => err)
 
   };
   
