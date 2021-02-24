@@ -2,7 +2,9 @@
 
 Scheduler is a single-page application built with React. It allows the user to book appointments with mentors 5 times a week from 12:00 - 5:00 pm. These appointments can be edited and/or cancelled in real time by the user. 
 
+## API Server
 The app communicates with an API server to fetch the data living in its database (PSQL) as well as to save the new input received from the user.
+<span style="color:#4965D7">_Fork/clone the [**shcheduler-api**](https://github.com/mafe-rnanda/scheduler-api) and follow the README instructions to configure and run the API server._</span>
 
 ### TDD (Test Driven Development)
 In order to test the functionality of the project, the following tools were used: Storybook (to build components in isolation), Jest (unit testing) and Cypress (end-to-end testing)
@@ -40,3 +42,12 @@ npm run storybook
 ```
 
 ## Screenshots
+!['day-selection-and-new-appointment'](https://github.com/mafe-rnanda/scheduler/blob/master/docs/navigate_days_add_new_appointment.gif?raw=true)
+_Navigate through the left side bar to change day of the week and display the different appointments._
+_Add a new appointment_
+
+!['edit-delete-appointment'](https://github.com/mafe-rnanda/scheduler/blob/master/docs/edit_delete_appointment.gif?raw=true)
+_Edit and delete an appointment_
+
+!['error-message'](https://github.com/mafe-rnanda/scheduler/blob/master/docs/error_message.gif?raw=true)
+_If an error occurs, the user is alerted_
