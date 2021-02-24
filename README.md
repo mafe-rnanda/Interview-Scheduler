@@ -4,7 +4,8 @@ Scheduler is a single-page application built with React. It allows the user to b
 
 ## API Server
 The app communicates with an API server to fetch the data living in its database (PSQL) as well as to save the new input received from the user.
-<span style="color:#4965D7">_Fork/clone the [**shcheduler-api**](https://github.com/mafe-rnanda/scheduler-api) and follow the README instructions to configure and run the API server._</span>
+
+**_Fork/clone the [**shcheduler-api**](https://github.com/mafe-rnanda/scheduler-api) and follow the README instructions to configure and run the API server._**
 
 ### TDD (Test Driven Development)
 In order to test the functionality of the project, the following tools were used: Storybook (to build components in isolation), Jest (unit testing) and Cypress (end-to-end testing)
